@@ -1,0 +1,396 @@
+/**
+ * OSP ENGENHARIA E CONSULTORIA
+ * Sistema de Movimento, Interações e Animações (CSS Moderno)
+ * Suporte a GSAP, Lenis, GPU Acceleration e Acessibilidade
+ */
+
+:root {
+  /* Motion Tokens */
+  --osp-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --osp-ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --osp-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --osp-ease-linear: linear;
+
+  --osp-duration-instant: 150ms;
+  --osp-duration-fast: 250ms;
+  --osp-duration-base: 450ms;
+  --osp-duration-slow: 800ms;
+  --osp-duration-cinematic: 1200ms;
+
+  --osp-glow-color: rgba(8, 119, 249, 0.35);
+}
+
+/* ==================================================
+   1. LENIS SMOOTH SCROLL STYLES
+   ================================================== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ==================================================
+   2. PROGRESSIVE ENHANCEMENT & ANIMATION TARGETS
+   ================================================== */
+/* Estado padrão: 100% visível caso o JavaScript falhe ou esteja desativado */
+[data-animate] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Quando o JS estiver carregado e pronto para animar */
+.has-js [data-animate="fade-up"]:not(.is-animated) {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  will-change: opacity, transform;
+}
+
+.has-js [data-animate="fade-in"]:not(.is-animated) {
+  opacity: 0;
+  will-change: opacity;
+}
+
+.has-js [data-animate="reveal"]:not(.is-animated) {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  clip-path: inset(0 0 100% 0);
+  will-change: opacity, transform, clip-path;
+}
+
+.has-js [data-animate="scale-up"]:not(.is-animated) {
+  opacity: 0;
+  transform: scale3d(0.95, 0.95, 1);
+  will-change: opacity, transform;
+}
+
+/* Efeito revelação de imagem (sem distorcer proporção) */
+.has-js [data-animate="image-reveal"] {
+  overflow: hidden;
+}
+
+.has-js [data-animate="image-reveal"] img:not(.is-animated) {
+  transform: scale3d(1.08, 1.08, 1);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Stagger parent container */
+.has-js [data-animate="stagger"] > *:not(.is-animated) {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  will-change: opacity, transform;
+}
+
+/* Linha técnica com desenho vetorial */
+.has-js [data-animate="line-draw"]:not(.is-animated) {
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+/* Classes de conclusão para limpeza de will-change */
+.is-animated {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+  will-change: auto !important;
+}
+
+/* ==================================================
+   3. MICROINTERAÇÕES CORPORATIVAS DE ALTA PRECISÃO
+   ================================================== */
+@media (hover: hover) and (pointer: fine) {
+  /* Cards com elevação sutil em hardware 3D */
+  .interactive-card {
+    transition: transform var(--osp-duration-base) var(--osp-ease-out-expo),
+                box-shadow var(--osp-duration-base) var(--osp-ease-out-expo),
+                border-color var(--osp-duration-fast) ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .interactive-card:hover {
+    transform: translate3d(0, -6px, 0);
+    box-shadow: 0 20px 35px -10px rgba(6, 28, 76, 0.12),
+                0 0 0 1px rgba(8, 119, 249, 0.2);
+    border-color: rgba(8, 119, 249, 0.4);
+  }
+
+  /* Imagens de projetos e serviços com zoom suave no hover */
+  .interactive-card:hover img {
+    transform: scale3d(1.04, 1.04, 1);
+  }
+
+  .interactive-card img {
+    transition: transform 650ms var(--osp-ease-out-expo);
+  }
+
+  /* Botões CTA com reflexo técnico de luz (Shine Sweep) */
+  .btn-tech-glow {
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--osp-duration-fast) var(--osp-ease-out-expo),
+                box-shadow var(--osp-duration-fast) var(--osp-ease-out-expo);
+  }
+
+  .btn-tech-glow::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.28) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(25deg);
+    pointer-events: none;
+    transition: none;
+  }
+
+  .btn-tech-glow:hover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 8px 22px -4px rgba(8, 119, 249, 0.45);
+  }
+
+  .btn-tech-glow:hover::after {
+    left: 140%;
+    transition: left 750ms ease-in-out;
+  }
+
+  /* Links com microinteração de seta ou sublinhado ciano */
+  .link-hover-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color var(--osp-duration-fast) ease;
+  }
+
+  .link-hover-arrow svg,
+  .link-hover-arrow .arrow {
+    transition: transform var(--osp-duration-fast) var(--osp-ease-out-expo);
+  }
+
+  .link-hover-arrow:hover svg,
+  .link-hover-arrow:hover .arrow {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* Feedback tátil para clique / toque */
+.interactive-card:active,
+.btn-tech-glow:active {
+  transform: translate3d(0, 0, 0) scale3d(0.985, 0.985, 1);
+}
+
+/* ==================================================
+   4. DISTRIBUIÇÃO DE CARTAS (PROJETOS EM DESTAQUE)
+   ================================================== */
+#featured-projects-grid {
+  perspective: 1400px;
+}
+
+.deal-card {
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Cartas preparadas ocultas até o usuário chegar na seção */
+.has-js .deal-card:not(.is-animated) {
+  opacity: 0;
+}
+
+/* Fallback garantido para no-JS */
+html:not(.has-js) .deal-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ==================================================
+   5. MARQUEE INFINITO CONTÍNUO (PARCEIROS)
+   ================================================== */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marqueeLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex !important;
+  width: max-content !important;
+  animation: marquee 35s linear infinite !important;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused !important;
+}
+
+/* Loop horizontal contínuo para cards de Segmentos Atendidos (Todas as telas) */
+@keyframes sectorsMarqueeLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-sectors-marquee {
+  display: flex !important;
+  width: max-content !important;
+  animation: sectorsMarqueeLoop 30s linear infinite !important;
+  will-change: transform;
+}
+
+.animate-sectors-marquee:hover,
+.animate-sectors-marquee:active {
+  animation-play-state: paused !important;
+}
+
+@media (max-width: 640px) {
+  .animate-sectors-marquee {
+    animation-duration: 22s !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sectors-marquee {
+    animation: none !important;
+  }
+}
+
+/* ==================================================
+   6. MICROINTERAÇÕES: SALTO DE ÍCONES (BOUNCE & JUMP)
+   ================================================== */
+@keyframes iconJumpBounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-8px) scale(1.18);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.05);
+  }
+  70% {
+    transform: translateY(-5px) scale(1.12);
+  }
+  100% {
+    transform: translateY(-4px) scale(1.1);
+  }
+}
+
+@keyframes statIconJump {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-13px) scale(1.22);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.06);
+  }
+  70% {
+    transform: translateY(-8px) scale(1.14);
+  }
+  100% {
+    transform: translateY(-6px) scale(1.12);
+  }
+}
+
+/* Ícones de Redes Sociais no Header */
+#main-header a[href*="instagram.com"] svg,
+#main-header a[href*="tiktok.com"] svg,
+#main-header a[href*="youtube.com"] svg,
+#main-header a[href*="linkedin.com"] svg,
+#main-header a[href*="facebook.com"] svg,
+#main-header a[aria-label="Instagram"] svg,
+#main-header a[aria-label="TikTok"] svg,
+#main-header a[aria-label="YouTube"] svg,
+#main-header a[aria-label="LinkedIn"] svg,
+#main-header a[aria-label="Facebook"] svg,
+.header-social-jump svg {
+  display: inline-block;
+  transform-origin: center bottom;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease, filter 0.25s ease;
+  will-change: transform;
+}
+
+#main-header a[href*="instagram.com"]:hover svg,
+#main-header a[href*="tiktok.com"]:hover svg,
+#main-header a[href*="youtube.com"]:hover svg,
+#main-header a[href*="linkedin.com"]:hover svg,
+#main-header a[href*="facebook.com"]:hover svg,
+#main-header a[aria-label="Instagram"]:hover svg,
+#main-header a[aria-label="TikTok"]:hover svg,
+#main-header a[aria-label="YouTube"]:hover svg,
+#main-header a[aria-label="LinkedIn"]:hover svg,
+#main-header a[aria-label="Facebook"]:hover svg,
+.header-social-jump:hover svg {
+  animation: iconJumpBounce 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  color: #0877F9 !important;
+  filter: drop-shadow(0 4px 10px rgba(8, 119, 249, 0.5));
+}
+
+/* Ícones da Seção de Estatísticas (+150 Clientes, +160 Projetos, etc.) */
+.stat-icon,
+.stat-item svg,
+.stat-box svg,
+section.border-b.border-slate-200 .grid svg {
+  display: inline-block;
+  transform-origin: center bottom;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease, color 0.2s ease;
+  will-change: transform;
+}
+
+.stat-item:hover svg,
+.stat-box:hover svg,
+.stat-icon:hover,
+section.border-b.border-slate-200 .grid > div:hover svg {
+  animation: statIconJump 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  color: #0877F9;
+  filter: drop-shadow(0 8px 16px rgba(8, 119, 249, 0.45));
+}
+
+/* Botão Menu Mobile - Sem contorno/ring azul ao clicar */
+#mobile-menu-btn,
+#mobile-menu-btn:focus,
+#mobile-menu-btn:focus-visible,
+#mobile-menu-btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+

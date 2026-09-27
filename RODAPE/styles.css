@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'OSP Display';
+  src: url('assets/fonts/osp-display-900.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+}
+:root {
+  --osp-bg: #06255f;
+  --osp-bg-dark: #041b48;
+  --osp-bg-deeper: #031435;
+  --osp-blue: #168bff;
+  --osp-blue-soft: #38bdf8;
+  --osp-white: #fff;
+  --osp-text-muted: rgb(255 255 255 / .78);
+  --osp-line: rgb(75 160 255 / .28);
+  font-family: Inter, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--osp-bg-dark); }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--osp-blue-soft); outline-offset: 6px; border-radius: 2px; }
+ul { margin: 0; padding: 0; list-style: none; }
+.osp-footer { position: relative; overflow: hidden; color: var(--osp-white); background: var(--osp-bg-dark); min-height: 100svh; display: flex; align-items: center; }
+.technical-background { position: absolute; inset: 0; width: 100%; height: 100%; stroke: rgb(70 145 255 / .16); stroke-width: 1; pointer-events: none; }
+.footer-container { position: relative; width: 100%; max-width: 1568px; margin: 0 auto; padding: 80px 64px 48px; }
+.information-grid { display: grid; grid-template-columns: 1.45fr .85fr 1.3fr; gap: 64px; padding-bottom: 32px; }
+.brand-link { display: inline-block; }
+.brand-logo { display: block; width: 160px; height: auto; }
+.brand p { max-width: 390px; margin: 22px 0 0; font-size: 18px; line-height: 1.6; color: var(--osp-text-muted); }
+.footer-column { padding-top: 8px; min-width: 0; }
+h2 { font-family: Outfit, sans-serif; font-size: 26px; line-height: 1.2; font-weight: 700; margin: 0 0 22px; }
+h2::after { content: ""; display: block; width: 42px; height: 3px; margin-top: 13px; background: var(--osp-blue); }
+.company-links { display: grid; gap: 16px; }
+.company-links a { display: inline-flex; align-items: center; gap: 17px; min-height: 28px; font-size: 17px; line-height: 1.5; color: var(--osp-text-muted); }
+.company-links a { transition: color 200ms ease, transform 200ms ease; }
+.company-links a:hover { color: white; transform: translateX(3px); }
+.icon { width: 28px; height: 28px; flex: 0 0 28px; color: var(--osp-blue); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+address { font-style: normal; }
+.contact-links { display: grid; gap: 25px; }
+.contact-links li { display: flex; }
+.contact-links a {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 17px;
+  color: var(--osp-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  transition: color 200ms ease, transform 200ms ease;
+}
+.contact-links a:hover { color: white; transform: translateX(3px); }
+.contact-links .icon { margin-top: 1px; flex: 0 0 16px; }
+.footer-divider { height: 1px; background: var(--osp-line); }
+.osp-stage { position: relative; width: 100%; max-width: 1440px; margin: 24px auto 20px; touch-action: pan-y pinch-zoom; --brush-fill: none; --reveal-opacity: 0; }
+.osp-word { width: 100%; margin: 0; padding: .04em 0 .08em; font-family: 'OSP Display', Outfit, sans-serif; font-weight: 900; font-size: clamp(190px, 27vw, 410px); line-height: .78; letter-spacing: -.035em; text-align: center; user-select: none; }
+.osp-outline { position: relative; z-index: 1; pointer-events: none; color: transparent; -webkit-text-stroke: 1.5px rgb(45 150 255 / .78); }
+/* Keep the full glyph advance available to background-clip. Negative letter
+   spacing would shrink that paint box and cut off each glyph's right edge. */
+.osp-letter { display: inline-block; letter-spacing: 0; margin-right: -.035em; }
+.osp-reveal { position: absolute; inset: 0; pointer-events: none; color: transparent; -webkit-text-fill-color: transparent; opacity: var(--reveal-opacity); transition: opacity 180ms ease; }
+.osp-reveal .osp-letter { background: var(--brush-fill); -webkit-background-clip: text; background-clip: text; opacity: 0; }
+.osp-reveal .osp-letter.is-active { opacity: 1; }
+.footer-metadata { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-right: 32px; }
+.bottom-social-links { display: flex; align-items: center; gap: 19px; }
+.bottom-social-links a, .bottom-social-links .social-unconfigured { display: flex; align-items: center; justify-content: center; min-width: 28px; min-height: 36px; }
+.bottom-social-links .icon { width: 21px; height: 21px; flex-basis: 21px; color: white; }
+.bottom-social-links a:hover .icon { color: var(--osp-blue-soft); }
+.footer-metadata p { color: var(--osp-text-muted); font-size: 12px; line-height: 1.6; margin: 0; text-align: right; }
+.whatsapp-button { position: fixed; z-index: 5; right: max(24px, env(safe-area-inset-right)); bottom: max(96px, env(safe-area-inset-bottom)); width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: #09cd48; color: white; transition: transform 200ms ease, background 200ms ease; }
+.whatsapp-button svg { width: 33px; height: 33px; fill: currentColor; }
+.whatsapp-button:hover { transform: scale(1.06); background: #08b840; }
+@media (min-width: 1600px) { .footer-container { max-width: 1672px; padding: 80px 68px 48px; } .information-grid { gap: 64px; } .brand-logo { width: 180px; } .brand p { font-size: 20px; } .company-links a { font-size: 19px; } .contact-links li { font-size: 18px; } }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer-container { padding: 56px 40px 36px; }
+  .information-grid { grid-template-columns: 1fr 1fr; gap: 36px 56px; }
+  .osp-word { font-size: 36vw; }
+  .footer-metadata { align-items: flex-start; padding-right: 56px; }
+  .footer-metadata p { max-width: 350px; }
+  .whatsapp-button { right: 16px; bottom: 20px; }
+}
+@media (max-width: 767px) {
+  .footer-container { padding: 44px 24px 104px; }
+  .information-grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; }
+  .brand-logo { width: 145px; }
+  .brand p { font-size: 17px; max-width: 420px; }
+  h2 { font-size: 23px; margin-bottom: 18px; }
+  .footer-column { padding-top: 0; }
+  .company-links { gap: 7px; }
+  .company-links a { min-height: 40px; }
+  .contact-links { gap: 19px; }
+  .contact-links a { min-height: 32px; }
+  .osp-stage { margin: 24px auto; }
+  .osp-word { font-size: clamp(100px, 36vw, 180px); }
+  .footer-metadata { flex-direction: column; gap: 18px; padding: 0; }
+  .bottom-social-links { gap: 18px; }
+  .bottom-social-links a, .bottom-social-links .social-unconfigured { min-width: 36px; min-height: 44px; }
+  .footer-metadata p { text-align: center; font-size: 11px; max-width: 360px; }
+  .whatsapp-button { right: 18px; bottom: max(18px, env(safe-area-inset-bottom)); }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }

@@ -1,0 +1,1515 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>OSP Engenharia e Consultoria | Barcarena - PA</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Outfit:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/osp-display-900.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="assets/css/motion.css">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0877F9',
+              'blue-hover': '#0664d4',
+              navy: '#061C4C',
+              'navy-dark': '#030f2b',
+              gray: '#64748B',
+              border: '#CBD5E1',
+              light: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Typography & Decorative Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #061C4C;
+      overflow-x: hidden;
+    }
+  </style>
+<style data-purpose="decorative-elements">
+    /* Blueprint vector line accents replicating technical motifs */
+    .blueprint-line {
+      position: absolute;
+      pointer-events: none;
+      border: 1.5px solid rgba(8, 119, 249, 0.28);
+    }
+    .offset-frame {
+      position: absolute;
+      border: 2px solid #0877F9;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .text-outline-number {
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.75);
+      color: transparent;
+      font-weight: 800;
+      line-height: 1;
+    }
+    @keyframes marquee {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+    .animate-marquee {
+      display: flex !important;
+      width: max-content !important;
+      animation: marquee 35s linear infinite !important;
+      will-change: transform;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused !important;
+    }
+  </style>
+<link rel="stylesheet" href="footer.css?v=20260926">
+</head>
+<body class="bg-white text-brand-navy antialiased">
+<!-- BEGIN: MainHeader -->
+<style id="header-fusion-styles">
+  /* Fusão limpa header ↔ hero sem linhas divisórias */
+  #main-header {
+    border: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+    box-shadow: none;
+    transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                -webkit-backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  #main-header.header-at-top {
+    background: linear-gradient(180deg,
+      rgba(0,0,0,0.70) 0%,
+      rgba(0,0,0,0.25) 50%,
+      transparent 100%) !important;
+    border: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  #main-header.header-scrolled {
+    background: rgba(0, 0, 0, 0.92) !important;
+    border: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.45) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    backdrop-filter: blur(14px) !important;
+  }
+  /* Hero sobe atrás do header (mobile h-14 = 56px) */
+  #inicio { margin-top: -56px; }
+</style>
+<header id="main-header" class="sticky top-0 z-50 w-full header-at-top" style="border: none !important; border-bottom: none !important; outline: none !important;">
+<div class="w-full px-4 sm:px-6 md:px-8 lg:pr-6 lg:pl-8 h-14 md:h-16 flex items-center justify-between relative">
+<!-- Brand Logo -->
+<a aria-label="OSP Engenharia e Consultoria" class="flex items-center gap-3 group" href="index.html"><img src="assets/osp-header-logo.png" alt="OSP Engenharia e Consultoria" class="h-9 md:h-11 w-auto object-contain"></a>
+<!-- Navigation Links -->
+<style>
+  .nav-icon-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    color: rgba(226,232,240,0.75);
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .nav-icon-link svg {
+    width: 33px;
+    height: 33px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s, color 0.2s;
+  }
+  .header-social-jump svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s, color 0.2s;
+  }
+  .nav-icon-link:hover { color: #0877F9; }
+  .nav-icon-link:hover svg { transform: translateY(-2px); }
+  .nav-icon-link.active { color: #0877F9; }
+  .nav-icon-label {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    background: rgba(8,119,249,0.92);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s, transform 0.18s;
+    z-index: 100;
+  }
+  .nav-icon-label::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-bottom-color: rgba(8,119,249,0.92);
+  }
+  .nav-icon-link:hover .nav-icon-label {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+</style>
+<!-- Primary CTA Button (Desktop Social Icons - Centralizados no Eixo Vertical do Hero) -->
+<div class="hidden md:flex items-center gap-4 md:absolute md:left-1/2 md:-translate-x-1/2">
+<a href="https://www.instagram.com/ospengenharia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="header-social-jump text-white/70 hover:text-brand-blue transition-colors duration-200">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a href="https://www.tiktok.com/@ospengenharia" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="header-social-jump text-white/70 hover:text-brand-blue transition-colors duration-200">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+</a>
+<a href="https://www.youtube.com/channel/UCW6Pz898V33sXfkSaxk9uUA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="header-social-jump text-white/70 hover:text-brand-blue transition-colors duration-200">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+</a>
+<a href="https://www.linkedin.com/company/ospengenharia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="header-social-jump text-white/70 hover:text-brand-blue transition-colors duration-200">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a href="https://www.facebook.com/profile.php?id=100089214560736" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="header-social-jump text-white/70 hover:text-brand-blue transition-colors duration-200">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.688 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"></path></svg>
+</a>
+</div>
+
+<!-- Navigation Links (Movidos para a direita) -->
+<nav class="hidden md:flex items-center space-x-8">
+  <!-- Início -->
+  <a class="nav-icon-link active" href="index.html" aria-label="Início">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span class="nav-icon-label">Início</span>
+  </a>
+  <!-- Sobre -->
+  <a class="nav-icon-link" href="sobre.html" aria-label="Sobre">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/></svg>
+    <span class="nav-icon-label">Sobre</span>
+  </a>
+  <!-- Serviços -->
+  <a class="nav-icon-link" href="servicos.html" aria-label="Serviços">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+    <span class="nav-icon-label">Serviços</span>
+  </a>
+  <!-- Projetos -->
+  <a class="nav-icon-link" href="projetos.html" aria-label="Projetos">
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+    <span class="nav-icon-label">Projetos</span>
+  </a>
+  <!-- Contato -->
+  <a class="nav-icon-link" href="contato.html" aria-label="Contato">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <span class="nav-icon-label">Contato</span>
+  </a>
+</nav>
+
+<!-- Mobile Hamburger Button -->
+<button id="mobile-menu-btn" type="button" onclick="toggleOSPMenu()" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu de navegação" class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-0 active:outline-none select-none" style="-webkit-tap-highlight-color: transparent; outline: none; box-shadow: none;">
+  <svg id="hamburger-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <svg id="hamburger-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+  </svg>
+</button>
+</div>
+
+<!-- Mobile Menu Drawer / Dropdown com Backdrop de Vidro Fosco em Tela Cheia -->
+<div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-14 bottom-0 z-50 flex flex-col justify-start bg-slate-950/65 backdrop-blur-md transition-all duration-300 overflow-y-auto" style="-webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);">
+  <!-- Conteúdo Principal do Menu -->
+  <div class="bg-[#0c121e]/98 border-t border-b border-white/10 px-6 py-5 shadow-2xl flex-shrink-0">
+    <div class="flex flex-col gap-5">
+      <!-- Links de Navegação Mobile -->
+      <nav class="flex flex-col space-y-1.5" aria-label="Navegação Mobile">
+        <a href="index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-150 bg-[#0877F9]/15 border border-[#0877F9]/40 text-[#0877F9]">
+          <svg class="w-5 h-5 stroke-current fill-none stroke-[2]" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="tracking-wide font-semibold">Início</span>
+        </a>
+        <a href="sobre.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-150 text-slate-200 hover:text-white hover:bg-white/5">
+          <svg class="w-5 h-5 stroke-current fill-none stroke-[1.8]" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.582-7 8-7s8 3 8 7"/></svg>
+          <span class="tracking-wide">Sobre</span>
+        </a>
+        <a href="servicos.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-150 text-slate-200 hover:text-white hover:bg-white/5">
+          <svg class="w-5 h-5 stroke-current fill-none stroke-[1.8]" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          <span class="tracking-wide">Serviços</span>
+        </a>
+        <a href="projetos.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-150 text-slate-200 hover:text-white hover:bg-white/5">
+          <svg class="w-5 h-5 stroke-current fill-none stroke-[1.8]" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          <span class="tracking-wide">Projetos</span>
+        </a>
+        <a href="contato.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-150 text-slate-200 hover:text-white hover:bg-white/5">
+          <svg class="w-5 h-5 stroke-current fill-none stroke-[1.8]" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span class="tracking-wide">Contato</span>
+        </a>
+      </nav>
+
+      <!-- Redes Sociais no Mobile -->
+      <div class="pt-4 border-t border-white/10">
+        <span class="block text-[11px] font-semibold tracking-wider uppercase text-white/50 mb-3">Redes Sociais</span>
+        <div class="flex items-center justify-between gap-2">
+          <a href="https://www.instagram.com/ospengenharia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#0877F9] hover:border-[#0877F9] hover:bg-white/10 transition-colors">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+          </a>
+          <a href="https://www.tiktok.com/@ospengenharia" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#0877F9] hover:border-[#0877F9] hover:bg-white/10 transition-colors">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCW6Pz898V33sXfkSaxk9uUA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#0877F9] hover:border-[#0877F9] hover:bg-white/10 transition-colors">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/ospengenharia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#0877F9] hover:border-[#0877F9] hover:bg-white/10 transition-colors">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100089214560736" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-[#0877F9] hover:border-[#0877F9] hover:bg-white/10 transition-colors">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.688 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Botão WhatsApp CTA -->
+      <a href="https://wa.me/5591993623933" target="_blank" rel="noopener noreferrer" class="mt-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.98] text-white font-semibold py-3 px-4 rounded-xl shadow-lg transition-all text-sm">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.19c-.24.68-1.39 1.3-1.92 1.38-.5.08-1.14.11-3.69-.94-2.18-.9-3.58-3.13-3.69-3.27-.11-.15-.88-1.17-.88-2.24 0-1.07.56-1.59.76-1.81.2-.22.44-.28.58-.28.15 0 .3 0 .43.01.14.01.32-.05.5.38.19.46.65 1.58.71 1.7.06.12.1.26.02.42-.08.15-.12.25-.24.39-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.17.61-.71.77-.95.16-.24.33-.2.55-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.18 1.26z"/></svg>
+        <span>Falar no WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Área de Vidro Fosco abaixo do menu (cobre o site de fundo com efeito blur) -->
+  <div class="flex-1 w-full min-h-[100px] pointer-events-auto" aria-hidden="true"></div>
+</div>
+<script>
+  function toggleOSPMenu(forceState) {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('mobile-menu-btn');
+    var iconOpen = document.getElementById('hamburger-icon-open');
+    var iconClose = document.getElementById('hamburger-icon-close');
+    var header = document.getElementById('main-header');
+    if (!menu || !btn) return;
+    var shouldOpen = forceState !== undefined ? forceState : menu.classList.contains('hidden');
+    if (shouldOpen) {
+      menu.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      if (iconOpen) iconOpen.classList.add('hidden');
+      if (iconClose) iconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      if (header) header.style.transform = 'translate3d(0, 0, 0)';
+      if (window.ospLenis) window.ospLenis.stop();
+    } else {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      if (iconOpen) iconOpen.classList.remove('hidden');
+      if (iconClose) iconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      if (window.ospLenis) window.ospLenis.start();
+    }
+    btn.blur();
+  }
+  // Fechamento exclusivamente pelo botão X (ou navegação de link).
+  // Não fecha ao deslizar, arrastar ou tocar fora.
+</script>
+</header>
+<!-- END: MainHeader -->
+<script>
+  /* Scroll listener: alterna entre header fundido ao hero (topo) e header sólido (scroll) */
+  (function() {
+    var header = document.getElementById('main-header');
+    if (!header) return;
+    var THRESHOLD = 20;
+    var lastState = null;
+    function update() {
+      var y = window.scrollY || window.pageYOffset;
+      if (y <= THRESHOLD) {
+        if (lastState !== 'top') {
+          header.classList.add('header-at-top');
+          header.classList.remove('header-scrolled');
+          lastState = 'top';
+        }
+      } else {
+        if (lastState !== 'scrolled') {
+          header.classList.remove('header-at-top');
+          header.classList.add('header-scrolled');
+          lastState = 'scrolled';
+        }
+      }
+    }
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+  })();
+</script>
+<main>
+<!-- BEGIN: HeroSection (Section 01) -->
+<style>
+  @media (min-width: 768px) {
+    #inicio {
+      aspect-ratio: auto !important;
+      height: 100vh !important;
+      height: 100dvh !important;
+      min-height: 0 !important;
+      width: 100% !important;
+      margin-top: -64px; /* header h-16 desktop */
+    }
+  }
+</style>
+<section class="relative overflow-hidden h-[100svh] min-h-[580px] md:min-h-0 md:w-full flex flex-col justify-between pt-[72px] sm:pt-[80px] md:pt-[88px] lg:pt-[96px] pb-5 sm:pb-6 md:pb-7 lg:pb-8 bg-transparent" id="inicio">
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <!-- Desktop Hero Video (Apenas telas a partir de md) -->
+    <video id="hero-video" autoplay="" muted="" playsinline="" class="hidden md:block w-full h-full object-cover object-center">
+      <source src="Hero_video_desktop.webm" type="video/webm">
+    </video>
+
+    <!-- Mobile Hero Video (Exclusivo Mobile < md - Reproduz totalmente 1x e pausa no último frame) -->
+    <video id="hero-video-mobile" autoplay="" muted="" playsinline="" class="block md:hidden w-full h-full object-cover object-center">
+      <source src="Hero_video_mobile.webm" type="video/webm">
+    </video>
+  </div>
+<script>
+  (function() {
+    // Controle Desktop: reproduz totalmente e congela no último frame sem reiniciar
+    var vDesktop = document.getElementById('hero-video');
+    if (vDesktop) {
+      vDesktop.muted = true;
+      vDesktop.loop = false;
+      vDesktop.removeAttribute('loop');
+
+      // Pausa explícita ao disparar evento ended
+      vDesktop.addEventListener('ended', function() {
+        vDesktop.pause();
+      });
+
+      // Garantia de fixação no último frame assim que atingir a duração final
+      function onDesktopTimeUpdate() {
+        if (vDesktop.duration && vDesktop.currentTime >= vDesktop.duration - 0.08) {
+          vDesktop.pause();
+          vDesktop.removeEventListener('timeupdate', onDesktopTimeUpdate);
+        }
+      }
+      vDesktop.addEventListener('timeupdate', onDesktopTimeUpdate);
+
+      var playDesktopPromise = vDesktop.play();
+      if (playDesktopPromise !== undefined) {
+        playDesktopPromise.catch(function(e) {
+          // Fallback se autoplay for adiado pelo navegador
+        });
+      }
+    }
+
+    // Controle Mobile: reproduz totalmente e congela no último frame sem reiniciar
+    var vMobile = document.getElementById('hero-video-mobile');
+    if (vMobile) {
+      vMobile.muted = true;
+      vMobile.loop = false;
+      vMobile.removeAttribute('loop');
+
+      // Pausa explícita ao disparar evento ended
+      vMobile.addEventListener('ended', function() {
+        vMobile.pause();
+      });
+
+      // Garantia de fixação no último frame assim que atingir a duração final
+      function onMobileTimeUpdate() {
+        if (vMobile.duration && vMobile.currentTime >= vMobile.duration - 0.08) {
+          vMobile.pause();
+          vMobile.removeEventListener('timeupdate', onMobileTimeUpdate);
+        }
+      }
+      vMobile.addEventListener('timeupdate', onMobileTimeUpdate);
+
+      var playPromise = vMobile.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function(e) {
+          // Fallback se autoplay for adiado pelo navegador
+        });
+      }
+    }
+  })();
+</script>
+<!-- Right Technical Graphic Accents -->
+
+<div class="max-w-[1360px] mx-auto px-4 sm:px-6 relative z-10 w-full flex-1 flex flex-col justify-between">
+<h1 class="sr-only">OSP Engenharia e Consultoria</h1>
+<!-- Hero Text Column (Exclusivo Mobile < md, oculto no Desktop) -->
+<div class="block md:hidden max-w-xl pt-2 sm:pt-4" data-animate="fade-up">
+  <!-- Eyebrow Tag -->
+  <div class="flex items-center gap-3">
+    <span class="w-10 h-[3.5px] bg-brand-blue rounded-full"></span>
+    <span class="text-[13px] sm:text-sm tracking-[0.24em] font-extrabold text-brand-blue uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
+      Soluções que constroem resultados
+    </span>
+  </div>
+  <!-- Lead Subtitle / Hero Main Message -->
+  <p class="text-[23px] sm:text-[28px] font-extrabold text-white leading-[1.24] tracking-tight antialiased mt-3 sm:mt-4" style="-webkit-text-stroke: 1.5px #000; paint-order: stroke fill; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 4px 14px rgba(0,0,0,0.9);">
+    Especialistas em Engenharia em Barcarena: Projetos, Licenciamento e Segurança para sua Empresa ou Obra.
+  </p>
+</div>
+
+<!-- Actions & Value Propositions Group (Alinhados na horizontal no desktop com respiro vertical equilibrado) -->
+<div class="w-full mt-auto pt-4 lg:pt-0 flex flex-col lg:flex-row lg:items-center lg:justify-start gap-3.5 sm:gap-4 lg:gap-5 xl:gap-6">
+  <!-- Button Actions -->
+  <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 flex-shrink-0">
+    <a class="w-full sm:w-auto sm:flex-initial inline-flex items-center justify-center gap-3 bg-brand-blue hover:bg-brand-blue-hover text-white font-bold text-base sm:text-[17px] lg:text-[18px] px-6 sm:px-8 lg:px-9 h-[56px] sm:h-[62px] lg:h-[66px] rounded-2xl shadow-lg shadow-brand-blue/30 transition duration-200 btn-tech-glow box-border" href="https://wa.me/5591993623933?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20OSP%20Engenharia" target="_blank" rel="noopener noreferrer" aria-label="Pedir Orçamento via WhatsApp">
+      <img src="WHATSAPP.webp" alt="WhatsApp" class="w-6 h-6 sm:w-7 sm:h-7 object-contain flex-shrink-0 drop-shadow">
+      <span>Pedir Orçamento</span>
+      <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+      </svg>
+    </a>
+    <a class="w-full sm:w-auto sm:flex-initial inline-flex items-center justify-center bg-white/95 hover:bg-white text-brand-navy font-bold text-base sm:text-[17px] lg:text-[18px] px-6 sm:px-8 lg:px-9 h-[56px] sm:h-[62px] lg:h-[66px] rounded-2xl border border-slate-300 shadow-lg shadow-black/10 transition duration-200 btn-tech-glow box-border" href="#servicos">
+      Nossos Serviços
+    </a>
+  </div>
+
+  <!-- Hero Value Propositions / Single Unified Bar -->
+  <div class="w-full lg:w-auto lg:max-w-2xl flex-1 lg:flex-initial">
+    <div class="grid grid-cols-3 divide-x divide-slate-200/90 bg-white/95 sm:bg-white/85 backdrop-blur-md border border-slate-200/80 shadow-lg shadow-black/10 rounded-2xl py-3 px-2 sm:py-3.5 sm:px-4 lg:py-0 lg:h-[66px] items-center interactive-card">
+      <!-- Item 1: Segurança -->
+      <div class="flex flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 px-1 sm:px-3.5">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 lg:w-[22px] lg:h-[22px] text-brand-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <div class="min-w-0 text-left">
+          <p class="font-bold text-[11px] sm:text-[13px] lg:text-[14px] text-brand-navy leading-tight truncate">Segurança</p>
+          <p class="text-[9.5px] sm:text-[11px] lg:text-[12px] text-slate-600 leading-tight truncate">em primeiro lugar</p>
+        </div>
+      </div>
+
+      <!-- Item 2: Soluções -->
+      <div class="flex flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 px-1 sm:px-3.5">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 lg:w-[22px] lg:h-[22px] text-brand-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <div class="min-w-0 text-left">
+          <p class="font-bold text-[11px] sm:text-[13px] lg:text-[14px] text-brand-navy leading-tight truncate">Soluções</p>
+          <p class="text-[9.5px] sm:text-[11px] lg:text-[12px] text-slate-600 leading-tight truncate">sob medida</p>
+        </div>
+      </div>
+
+      <!-- Item 3: Resultados -->
+      <div class="flex flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 px-1 sm:px-3.5">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 lg:w-[22px] lg:h-[22px] text-brand-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <div class="min-w-0 text-left">
+          <p class="font-bold text-[11px] sm:text-[13px] lg:text-[14px] text-brand-navy leading-tight truncate">Resultados</p>
+          <p class="text-[9.5px] sm:text-[11px] lg:text-[12px] text-slate-600 leading-tight truncate">para o seu negócio</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: ExperienciaConfianca (Section 02) -->
+<section class="relative overflow-hidden py-14" id="sobre" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAyuXID6JNWq96Bic5qf1tjSxVcrn-0aBm7uM3VayGwsBU0J67lPa9oeA5IZHAv243YJBKn5MJGXCUkuhrl6n9q6e1nZWd6OVLGKr_etWcDK0dcOooFZcZK4cFH9b5UZLJhyXDY-7GczGyDkh6vuraquvMV4dg9rKEBf43tfLGdklEkUZW0QUn1i57B5jF-xxkr2NwFx_iDY13Pu0JP9oDa6V8fWc571-MQBEOfH0okdDg73y-GqN2CbyqBA6pYzcRpaET3Pkh5Xrr6Vps&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; position: relative; overflow: hidden;">
+<div class="max-w-[1360px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
+<!-- Text Column -->
+<div class="lg:col-span-6 space-y-6">
+<div class="flex items-center gap-3">
+<span class="w-8 h-[3px] bg-brand-blue rounded-full"></span>
+<span class="text-xs tracking-[0.2em] font-bold text-slate-500 uppercase">Nossa Atuação</span>
+</div>
+<h2 class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-brand-navy leading-[1.15] tracking-tight">
+            Experiência e Confiança <br>
+            em cada Projeto
+          </h2>
+<h3 class="text-xl sm:text-2xl font-semibold text-brand-navy">
+            Soluções completas para sua segurança e regularização.
+          </h3>
+<p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            A OSP Engenharia e Consultoria une conhecimento técnico e agilidade para atender as demandas mais exigentes de Barcarena e região. Atuamos com rigor normativo em projetos civis, mecânicos e licenciamento ambiental, garantindo que sua obra ou indústria opere com máxima eficiência e dentro da lei.
+          </p>
+<!-- Direct Phone Call Card -->
+<div class="pt-4 flex justify-center lg:justify-start">
+<a class="inline-flex items-center gap-4 group p-2 pr-6 rounded-full hover:bg-slate-50 transition border border-transparent hover:border-slate-200" href="tel:91993623933">
+<div class="w-14 h-14 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition duration-200 shadow-sm">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"></path>
+</svg>
+</div>
+<div>
+<span class="text-xs font-semibold text-slate-500 block">Fale com um Especialista</span>
+<span class="text-2xl font-black text-brand-navy tracking-tight">91 9 9362-3933</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Visual Display Column with Frame Offset (Clean photography without mockup) -->
+
+<div class="lg:col-span-6 relative flex justify-center items-center"><div class="relative w-full max-w-sm lg:max-w-md my-6"><div class="absolute -top-4 -right-4 w-full h-full border-2 border-brand-blue pointer-events-none rounded-2xl z-0"></div><div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl bg-slate-100 hover:scale-[1.02] transition-transform duration-300"><img src="assets/operacao-guindaste-sany-osp.jpg" width="768" height="1024" alt="Operação de Guindaste OSP Engenharia" class="w-full h-auto object-cover block" loading="lazy"></div></div></div></div>
+</section>
+<!-- END: ExperienciaConfianca -->
+
+<!-- BEGIN: ParceirosMarquee (Grandes Clientes e Parceiros) -->
+<section class="py-16 bg-slate-900 text-white border-y border-white/10 relative overflow-hidden" data-animate="fade-in">
+  <div class="max-w-[1360px] mx-auto px-6 relative z-10 text-center mb-10">
+    <span class="text-xs font-bold uppercase tracking-widest text-brand-blue block mb-1">Confiança Comprovada</span>
+    <h3 class="text-xl md:text-2xl font-bold text-white">Empresas e Parceiros que Confiam na OSP Engenharia</h3>
+  </div>
+
+  <!-- Marquee Container with High-Tech Left & Right Gradient Fade Masks -->
+  <div class="relative w-full overflow-hidden py-4">
+    <!-- Gradient Fade Masks -->
+    <div class="absolute left-0 top-0 bottom-0 w-24 md:w-44 z-20 pointer-events-none bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-24 md:w-44 z-20 pointer-events-none bg-gradient-to-l from-slate-900 via-slate-900/80 to-transparent"></div>
+
+    <!-- Scrolling Track with Two Duplicates for Infinite Seamless Loop -->
+    <div class="animate-marquee flex items-center gap-6">
+      
+      <!-- Group 1: 17 Logos -->
+      <div class="flex items-center gap-6 shrink-0">
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/hydro.png" alt="Hydro" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/albras.webp" alt="ALBRAS" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/suzano.png" alt="Suzano" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/artemyn.png" alt="Artemyn" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/soldas-brasil.png" alt="Soldas Brasil" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/vertical.png" alt="Vertical Locações" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/vale.png" alt="Vale" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/unitapajos.png" alt="Unitapajós" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/brasilit.png" alt="Brasilit Saint-Gobain" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/hidrovias.png" alt="Hidrovias do Brasil" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/votorantim.png" alt="Votorantim Cimentos" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/tgpm.png" alt="TGPM" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/norte.png" alt="Norte Empreendimentos" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/engeko.png" alt="Engeko" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/pcp-barbosa.png" alt="PCP Barbosa Engenharia" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/celba.png" alt="CELBA" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/newfortress.png" alt="NewFortress Energy" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Group 2: Duplicate for Seamless Continuous Loop -->
+      <div class="flex items-center gap-6 shrink-0" aria-hidden="true">
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/hydro.png" alt="Hydro" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/albras.webp" alt="ALBRAS" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/suzano.png" alt="Suzano" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/artemyn.png" alt="Artemyn" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/soldas-brasil.png" alt="Soldas Brasil" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/vertical.png" alt="Vertical Locações" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/vale.png" alt="Vale" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/unitapajos.png" alt="Unitapajós" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/brasilit.png" alt="Brasilit Saint-Gobain" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/hidrovias.png" alt="Hidrovias do Brasil" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/votorantim.png" alt="Votorantim Cimentos" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/tgpm.png" alt="TGPM" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/norte.png" alt="Norte Empreendimentos" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/engeko.png" alt="Engeko" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/pcp-barbosa.png" alt="PCP Barbosa Engenharia" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/celba.png" alt="CELBA" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="h-20 w-48 px-5 py-3 bg-white/95 hover:bg-white rounded-2xl shadow-md border border-white/20 flex items-center justify-center shrink-0 hover:scale-105 transition-all duration-300 group">
+          <img src="assets/logos/newfortress.png" alt="NewFortress Energy" class="max-h-12 max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- END: ParceirosMarquee -->
+
+<!-- BEGIN: EspecialidadesTecnicas (Section 04) -->
+<section class="bg-white relative py-14" id="servicos" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.85) 100%), url(&quot;https://lh3.googleusercontent.com/aida/AEtjO1Wik4zigi4-Scmyt54ymgKKqYh7afL9GYvJH0PH3NLlBRg9l6oXqaLUf-QcwhBF_xlecP9FIcVKWPMuRgwAR6bRjRSddoEbFJFVk3gw9uaTDB3hijsxYYqk_-n-s1039koYncMGTgaSFk314Mhb9deVWciG4bEP9_3_jXw3tvxWzLGiitRpuTAqtiyoj2BFCAgiZwx2Qjt-SyATUE_llxeZh3YnWJl-SLyPaSYkZ9KmPP2eBUKJaC9dPDZ2&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+<div class="max-w-[1360px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Clean Vertical Industrial Structure & Scaffolding Photo -->
+<div class="lg:col-span-5 relative flex justify-center order-2 lg:order-1"><div class="relative w-full max-w-sm lg:max-w-md my-6"><div class="absolute -top-4 -right-4 w-full h-full border-2 border-brand-blue pointer-events-none rounded-2xl z-0"></div><div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl bg-slate-100"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiTGk40XjDrFBM29XYZdeCUqDKWa0fPo1YrZWu6cxYSaXBNLlSlVQ_0o8-vVqp-hBq5DY-lcbHh8gl1EGI5cbli49TLbCHeWF6unXHwMWYN9-n_yL7BC8sD7oabCT2JbN_NS2VJ_YU7K6Ovpls1U3Jtgs2Bcc3QvA2ikLKOsgbgKuOtd9WMRsV8M-bF3SC8B8aCimMR9KJWR8uQjJluGQ5XcEPVaM_Ko0BJ52nxb7973vUVY-KBCpfWa4ZsJF6QEE5YizWXjXxp7g6BTY" alt="Engenharia e Estruturas OSP" class="w-full h-auto object-cover block" loading="lazy"></div></div></div>
+<!-- Right Content & 6 Engineering Specialities Grid -->
+<div class="lg:col-span-7 space-y-6 order-1 lg:order-2">
+<div class="flex items-center gap-3">
+<span class="w-8 h-[3px] bg-brand-blue rounded-full"></span>
+<span class="text-xs tracking-[0.2em] font-bold text-slate-500 uppercase">Soluções Completas</span>
+</div>
+<h2 class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-brand-navy leading-tight">
+            Nossas Especialidades <br>
+            Técnicas
+          </h2>
+<p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            Soluções integradas em Engenharia (Mecânica, Civil, Elétrica), Segurança do Trabalho, Meio Ambiente e Arquitetura Legal. Garantimos a conformidade técnica e normativa total do seu empreendimento em Barcarena.
+          </p>
+<!-- 2-Column Grid with 6 Services -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+<!-- Item 1 -->
+<div class="flex items-start gap-4 interactive-card p-3 rounded-xl">
+<div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex-shrink-0 flex items-center justify-center">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-bold text-base text-brand-navy">Eng. Mecânica</h4>
+<p class="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">
+                  PMOC, Rigging, Memória de Cálculo e Laudos Técnicos.
+                </p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-4 interactive-card p-3 rounded-xl">
+<div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex-shrink-0 flex items-center justify-center">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M12 3a9 9 0 00-9 9h18a9 9 0 00-9-9zm-1 11v6h2v-6h-2zM2 14v2h20v-2H2z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-bold text-base text-brand-navy">Eng. de Seg. do Trabalho</h4>
+<p class="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">
+                  Gestão de SST (PGR, PCMAT, LTCAT) e assessoria para eSocial.
+                </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-4 interactive-card p-3 rounded-xl">
+<div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex-shrink-0 flex items-center justify-center">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 14H7v-2h4v2zm0-4H7v-2h4v2zm0-4H7V7h4v2zm6 8h-4v-2h4v2zm0-4h-4v-2h4v2zm0-4h-4V7h4v2z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-bold text-base text-brand-navy">Eng. Civil e Estrutural</h4>
+<p class="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">
+                  Cálculo de Fundação, Estruturas e Inspeção Predial (LTIP).
+                </p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-start gap-4 interactive-card p-3 rounded-xl">
+<div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex-shrink-0 flex items-center justify-center">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M7 2v11h3v9l7-12h-4l4-8z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-bold text-base text-brand-navy">Eng. Elétrica</h4>
+<p class="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">
+                  Projetos de baixa e média tensão, SPDA (Para-raios), e laudos de aterramento.
+                </p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="flex items-start gap-4 interactive-card p-3 rounded-xl">
+<div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex-shrink-0 flex items-center justify-center">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3 8.37 0 14-6.63 14-14v-2h-5zm-3 8c-3.15 0-6.13-2.17-7.55-5.35C8.83 8.42 12.02 8 14 8v8z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-bold text-base text-brand-navy">Eng. Engenharia Ambiental</h4>
+<p class="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">
+                  Licenças SEMADE (LP, LI, LO), RAS, PGRS, PCA e RIAA.
+                </p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="flex items-start gap-4 interactive-card p-3 rounded-xl">
+<div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-blue flex-shrink-0 flex items-center justify-center">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-bold text-base text-brand-navy">Arquitetura E Regularização</h4>
+<p class="text-xs sm:text-sm text-slate-600 mt-1 leading-snug">
+                  Projetos para Alvará, Habite-se e Levantamentos Topográficos.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: EspecialidadesTecnicas -->
+
+<!-- BEGIN: CTARegularizacao (Section 03) -->
+<section class="relative bg-slate-900 overflow-hidden py-16">
+<!-- Clean Background Industrial Image without mockups -->
+<div class="absolute inset-0 z-0"><img alt="Obra e andaimes industrial em Barcarena" class="w-full h-full object-cover object-center brightness-[0.70]" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC11dGGFktDrsowOQUFoH2B59dyelZsejY3C-620N_1P2SUnUE3jvcXWWfj6U9Sp5RDSrIRxBH7LiBvcw2X921oCG2wItH42siNK9CCoMOPGBzVTZTdjEDVVS78hWon6GRAhe92qaHjLd2CkSV7M0TXmmE-BqYexDcs2Rz1LAbfO3D6ElhHIWl9Kzqmadc9C-7KXrlO9VN2AGS4mYbwt0zORVoFlFRkvq9FSWvbj5O70yUem_J-ajqnSSkL1_eBmkRnh3E"><div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/40"></div></div>
+<div class="max-w-[1360px] mx-auto px-6 relative z-10">
+<div class="max-w-2xl text-white space-y-6" data-animate="fade-up">
+<div class="flex items-center gap-3">
+<span class="w-8 h-[3px] bg-brand-blue rounded-full"></span>
+<span class="text-xs tracking-[0.2em] font-bold text-blue-200 uppercase">Fale com um Especialista</span>
+</div>
+<h2 class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-white leading-tight">
+            Precisa de Regularizar <br>
+            sua Obra ou Empresa?
+          </h2>
+<p class="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
+            Entre em contato agora e fale com um especialista. Atendimento ágil e consultoria técnica personalizada para Barcarena e região.
+          </p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-3 bg-brand-blue hover:bg-brand-blue-hover text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg transition duration-200 hover:scale-[1.02] btn-tech-glow pulse-subtle" href="https://wa.me/5591993623933" rel="noopener noreferrer" target="_blank">
+<!-- WhatsApp Icon SVG -->
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.19c-.24.68-1.39 1.3-1.92 1.38-.5.08-1.14.11-3.69-.94-2.18-.9-3.58-3.13-3.69-3.27-.11-.15-.88-1.17-.88-2.24 0-1.07.56-1.59.76-1.81.2-.22.44-.28.58-.28.15 0 .3 0 .43.01.14.01.32-.05.5.38.19.46.65 1.58.71 1.7.06.12.1.26.02.42-.08.15-.12.25-.24.39-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.17.61-.71.77-.95.16-.24.33-.2.55-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.18 1.26z"></path>
+</svg>
+<span class="">Falar No WhatsApp</span>
+<svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CTARegularizacao -->
+<!-- BEGIN: ProjetosEmDestaque (Section 05) -->
+<section class="relative overflow-hidden py-14" id="projetos" style="background: transparent;"><div class="absolute inset-0 pointer-events-none overflow-hidden z-0"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVMG6YDjaKlNxUqFLM2erkiYZksMLqkwFuIUfPAaG8pnOOnqxw7K37mahUAwnZISHVMg-HMoJxPapT0FPPC7fAvRUgkD-h9R3As-ebMdJsM34wFqKaE6iSfa5yDfLzXlhLSHo9bf9K2ut-qNya4y89-Sc1hcoXZ2JCImp9ahnLLY2F6cNeJbsqRs2JseDvTX_C-gIC9yNBpH0G4RNlFmeU_OYkwbQ96lC6txg2__QjVlrFZM7LsUogNnG7AX2r7yxwuoA" alt="Seamless technical blueprint background" class="w-full h-full object-cover object-center opacity-80 block" style="filter: contrast(1.1) saturate(1.15);"><div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" data-stitch-orig-opacity="0.4" style="opacity: 0.4;"></div></div><div class="max-w-[1360px] mx-auto px-6 relative z-10">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start relative" id="featured-projects-grid">
+    <!-- Top-Left: Header Block -->
+    <div id="featured-projects-header" class="flex flex-col justify-center space-y-4 p-2 sm:p-4 lg:pr-8 sm:min-h-[260px] relative z-20">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-1 bg-brand-blue rounded-full"></span>
+        <span class="text-xs font-bold tracking-[0.24em] text-slate-400 uppercase">Resultados Reais</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0B1E3F] leading-[1.15] tracking-tight">
+        Nossos Projetos em<br>Destaque
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed pt-1">
+        Transformamos desafios técnicos em soluções seguras e legalizadas. Engenharia de alta complexidade com foco em precisão normativa em Barcarena e região.
+      </p>
+    </div>
+
+    <!-- Top-Right: Card 1 (TGPM) -->
+    <div class="deal-card bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col sm:flex-row border border-slate-100 group sm:h-[260px] interactive-card">
+      <div class="sm:w-1/2 w-full h-56 sm:h-full overflow-hidden relative">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHqBfG2kY4P6G_lx1psSDdHSaqjgTSe5unR9j_J8rfoLTo1AOUb7t7aYFqgI3GnERXooiyrr8vkMVwlOjzm5XLJazxSfrL5JIbVIGkgYr0Y9fFdlG4SoQpF7sIpAeLcPtqwKj5QTwtA2uub1J5uv6w-H6KQtljtTLjZsRsVcS_QXflm6PWCSmBpJyKwX3EhGbfS28yMu6hG6jqL5Dq8QrE3Qf9TZoDHWtVho_7jxU1E_u2rZCLGmwapjHylrfebzIGoBc" alt="Projetos de andaimes TGPM Barcarena" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+      </div>
+      <div class="sm:w-1/2 w-full p-6 sm:p-7 flex flex-col justify-between bg-white">
+        <div class="space-y-3">
+          <span class="w-8 h-1 bg-brand-blue rounded-full block"></span>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Projetos de andaimes em Barcarena. Dimensionamento estrutural e memoriais de cálculo para a segurança NR-35.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-slate-200/70 space-y-1.5">
+          <h3 class="text-2xl font-black text-[#0B1E3F] tracking-tight">TGPM</h3>
+          <p class="text-sm font-semibold text-slate-500 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-brand-blue flex-shrink-0 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+            </svg>
+            <span class="">Barcarena &ndash; PA</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom-Left: Card 2 (Porto Futuro II) -->
+    <div class="deal-card bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col sm:flex-row border border-slate-100 group sm:h-[260px] interactive-card">
+      <div class="sm:w-1/2 w-full h-56 sm:h-full overflow-hidden relative">
+        <img src="assets/operacao-guindaste-osp.jpg" width="768" height="1024" alt="Planos de Rigging Porto Futuro II" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+      </div>
+      <div class="sm:w-1/2 w-full p-6 sm:p-7 flex flex-col justify-between bg-white">
+        <div class="space-y-3">
+          <span class="w-8 h-1 bg-brand-blue rounded-full block"></span>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Planos de Rigging para desmontagem de 7 guindastes. Engenharia de alta complexidade com foco em segurança e estabilidade.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-slate-200/70 space-y-1.5">
+          <h3 class="text-2xl font-black text-[#0B1E3F] tracking-tight">Porto Futuro II</h3>
+          <p class="text-sm font-semibold text-slate-500 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-brand-blue flex-shrink-0 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+            </svg>
+            <span class="">Belém &ndash; PA</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom-Right: Card 3 (Terpaz) -->
+    <div class="deal-card bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col sm:flex-row border border-slate-100 group sm:h-[260px] interactive-card">
+      <div class="sm:w-1/2 w-full h-56 sm:h-full overflow-hidden relative">
+        <img src="assets/projeto-terpaz-osp.jpg" width="768" height="1024" alt="Serviços multidisciplinares TerPaz Barcarena" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+      </div>
+      <div class="sm:w-1/2 w-full p-6 sm:p-7 flex flex-col justify-between bg-white">
+        <div class="space-y-3">
+          <span class="w-8 h-1 bg-brand-blue rounded-full block"></span>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Serviços multidisciplinares para o Projeto TerPaz em Barcarena. Linha de vida e laudos de ancoragem com certificação técnica.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-slate-200/70 space-y-1.5">
+          <h3 class="text-2xl font-black text-[#0B1E3F] tracking-tight">Terpaz</h3>
+          <p class="text-sm font-semibold text-slate-500 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-brand-blue flex-shrink-0 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+            </svg>
+            <span class="">Barcarena &ndash; PA</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<!-- END: ProjetosEmDestaque -->
+<!-- BEGIN: SegmentosAtendidos (Section 06) -->
+<section class="relative py-14" id="segmentos-atendidos"><div class="absolute inset-0 pointer-events-none overflow-hidden z-0" style="background: linear-gradient(to bottom, #f0f6ff, #e8f0fe);"><div class="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white" style="opacity: 0.45;"></div><div class="blueprint-line w-[800px] h-[800px] -top-40 -left-40 rounded-full border-brand-blue/20 pointer-events-none"></div></div>
+<div class="max-w-[1360px] mx-auto px-6 relative z-10">
+<!-- Header & Sector Description -->
+<div class="max-w-4xl space-y-5 mb-14">
+<div class="flex items-center gap-3">
+<span class="w-8 h-[3px] bg-brand-blue rounded-full"></span>
+<span class="text-xs tracking-[0.2em] font-bold text-slate-500 uppercase">Soluções para Diversos Setores</span>
+</div>
+<h2 class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-brand-navy leading-tight">
+            Segmentos Atendidos
+          </h2>
+<div class="space-y-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+<p class="">
+              Na OSP Engenharia e Consultoria, nossos diferenciais baseiam-se na união entre rigor técnico e inovação constante. Somos referência em Engenharia em Barcarena por adotar práticas de Sustentabilidade e ESG, garantindo que cada projeto respeite o meio ambiente e a sociedade.
+            </p>
+<p class="">
+              Além disso, nossa prioridade é a Segurança absoluta em todas as operações, utilizando Eficiência e Tecnologia de ponta para otimizar processos industriais e civis. Ao escolher nossos serviços, você garante uma parceria focada em resultados sólidos, conformidade normativa e excelência operacional no Pará.
+            </p>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold text-sm px-6 py-3 rounded-lg shadow-sm transition btn-tech-glow" href="#contato">
+<span class="">Ver Tudo</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<style>
+  @keyframes sectorsMarqueeLoop {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+  .animate-sectors-marquee {
+    display: flex !important;
+    width: max-content !important;
+    animation: sectorsMarqueeLoop 30s linear infinite !important;
+    will-change: transform;
+  }
+  .animate-sectors-marquee:hover {
+    animation-play-state: paused !important;
+  }
+  @media (max-width: 640px) {
+    .animate-sectors-marquee {
+      animation-duration: 22s !important;
+    }
+  }
+</style>
+<!-- Continuous Horizontal Loop (Marquee) - Full Width Across Entire Viewport -->
+<div class="sectors-marquee-wrapper overflow-hidden relative py-8 w-full z-10">
+  <!-- Fade lateral esquerdo -->
+  <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-r from-[#f0f6ff] via-[#f0f6ff]/80 to-transparent z-10 pointer-events-none"></div>
+  <!-- Fade lateral direito -->
+  <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-l from-[#e8f0fe] via-[#e8f0fe]/80 to-transparent z-10 pointer-events-none"></div>
+
+  <div class="animate-sectors-marquee flex w-max cursor-grab active:cursor-grabbing">
+    <!-- Set 1 (Original) -->
+    <div class="flex gap-6 sm:gap-8 pr-6 sm:pr-8">
+      <!-- Tile 01: Indústria e Mineração -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Indústria e Mineração" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVRX2RIEnNry1wHUFky9l_a2qn9O6HelpUs3ybzIGRGT_tbQ1IcZWTvXQDueCgUDg6Q74sjIEP1mDddkdT_33cL_co-_BsULdZqv2AsC4keGRPaR_65NAI0Hs_ZTeLPjy2dQdzz23725xbit_7F6FJS95kpaFVYupbbqRqJDy-Y_E1CcIGtScYNgoMmxRf2rJiipnGlopC5pD3wMWPf54SzdCuvIEKj63SXVr3nRW2xcaJGsauFGzZtA">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">01.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 01</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Indústria e Mineração</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Engenharia pesada, laudos e adequações estruturais para polos industriais.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 02: Portos e Logística -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Portos e Logística" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdWKXt4kxVU-PxmuUIL141kpr4EVrPIxCsPMrXjHED1C6qygV5_sl_2yzL6hVzSSEPZfztaqHqgzMU-1NOijv8q0nvaBz83QuPpx6nZ3dBdFXrBWTqX-DleNdgwuHWPjUd8ZwZZoo09X9o3R7kc47TT2zu9DAfI7y9kDu4OM9ciKwF118QDjntXF77oH9X7SAOccW4vZlxX1bLluA8GZtbBtvGjd8WPhsWapgQE1aHn8rirHVJwKZ_w">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.64 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.47L20 11.06V7c0-.55-.45-1-1-1h-5V3c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1v3H5c-.55 0-1 .45-1 1v4.06l-1.28.21c-.26.04-.48.22-.6.47-.11.24-.13.52-.06.78L3.95 19zM6 8h12v3.08l-6 1-6-1V8z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">02.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 02</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Portos e Logística</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Engenharia portuária, dragagem, licenciamento e infraestrutura retroportuária.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 03: Comércio e Serviços -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Comércio e Serviços" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXqm1cXLGOFSZzdN1XogOq8aUw3BnGvSQoBnGXFPH7-eSgYQXrrwtNa5S7MDQ-oFPjoNftrlzEUZT7j8-YFErgLnOhUHMixzcLcwZDZ0zQJ0BR6HkjFxE_cVsBYQ5FFaCIUgPaZbq1iVhCemUN6Z-6HjL-Aj2aR6BE4eZtJae_CYTwgHbZa5Enex39yav33qqu2-jwLDCGwXGhpOE6Z_uN_kaotNglETkIHzEYVD8c8MEO3CK2gVlvfA">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 4H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-7 2h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2zm-4-8h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm-4-8h2v2H4V6zm0 4h2v2H4v-2zm0 4h2v2H4v-2zm14 6H2v-2h18v2zm-2-8h2v2h-2v-2zm0-4h2v2h-2V6z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">03.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 03</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Comércio e Serviços</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Projetos civis, prevenção contra incêndio (AVCB) e regularização predial.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 04: Mercado Imobiliário -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Mercado Imobiliário" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC45ZEDDHng9IJ-TmloTuXo9ewDuZLnXeDa_AS0KaBX5Tq4wUAHngkPdW8fO9LPgrC3dO3jBhKLbN2vrcP7YiFsEKoRwSN9FacQbmlMYEYxp1tpqx_EwDWhluVm8yB8YWzsJH0Vjy5D4AjtNpqdnmyl4WIPGh-4N9t2vNbMlLotwAz8xS7oq5yxiY12weFdCmCUBErQzOML9tlV5s45OahLKjilU37jyTHh1O0lIQZSX2MSUt0kIg7goA">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">04.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 04</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Mercado Imobiliário</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Loteamentos, topografia de precisão, desmembramentos e consultoria técnica.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 05: Gestão Ambiental -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Gestão Ambiental" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXRgKWUTgCpjt11BgbKczSPKs0S7-j6si3A2ajDlaq_jDaFPTdyeV_bTywDIEBG8oDTDATywZtnzexdUqiyQqLEQtBF60hFhDwZX43HkFHl0WWymbkCWQjOCt3gq2YM25F3Hi4rxnDQLxu2zhsVGsFPwiIqKQjPkEt81K6VLCjSHSG4HQ-AU6q_YqUCtcOU4SIhkEE2JP12SCDAd1QzDHoOxSGJyXr-UIwsOa-Jraf2Leln1OEE8pAFw">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">05.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 05</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Gestão Ambiental</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Licenciamento ambiental, planos de controle (PCA/RCA) e conformidade legal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 06: Projetos Públicos -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Projetos Públicos" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpAc0ZAMBA1iKxfiP8M3GEyrualY9VNdz3mpzVez_zz0begx4QVoeoTr_BtyCYqpY-fK3HrKBbMIxPDwIGvHlK_fj4M1K79hVhiKmVIM5kr0GLwBDRVD_pNxoJs_g4zYFdDeXmkXvmZoSLVsnE2Mus5jsl_hRjYxbuiMu_3tOK0JtdX9k7ZW1iH0epvOmAAQuOLl8fV1dNT8aaY4tLzSTLQ8lsVK_qps_mXFZfQY7KawyJ2k7QXVWyZg">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 1L2 6v2h20V6L12 1zm-7 9v8h3v-8H5zm5 0v8h4v-8h-4zm6 0v8h3v-8h-3zM2 20v2h20v-2H2z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">06.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 06</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Projetos Públicos</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Infraestrutura urbana, projetos de engenharia civil e fiscalização técnica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set 2 (Seamless Infinite Duplicate) -->
+    <div class="flex gap-6 sm:gap-8 pr-6 sm:pr-8" aria-hidden="true">
+      <!-- Tile 01: Indústria e Mineração -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Indústria e Mineração" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVRX2RIEnNry1wHUFky9l_a2qn9O6HelpUs3ybzIGRGT_tbQ1IcZWTvXQDueCgUDg6Q74sjIEP1mDddkdT_33cL_co-_BsULdZqv2AsC4keGRPaR_65NAI0Hs_ZTeLPjy2dQdzz23725xbit_7F6FJS95kpaFVYupbbqRqJDy-Y_E1CcIGtScYNgoMmxRf2rJiipnGlopC5pD3wMWPf54SzdCuvIEKj63SXVr3nRW2xcaJGsauFGzZtA">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">01.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 01</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Indústria e Mineração</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Engenharia pesada, laudos e adequações estruturais para polos industriais.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 02: Portos e Logística -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Portos e Logística" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFdWKXt4kxVU-PxmuUIL141kpr4EVrPIxCsPMrXjHED1C6qygV5_sl_2yzL6hVzSSEPZfztaqHqgzMU-1NOijv8q0nvaBz83QuPpx6nZ3dBdFXrBWTqX-DleNdgwuHWPjUd8ZwZZoo09X9o3R7kc47TT2zu9DAfI7y9kDu4OM9ciKwF118QDjntXF77oH9X7SAOccW4vZlxX1bLluA8GZtbBtvGjd8WPhsWapgQE1aHn8rirHVJwKZ_w">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.64 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.47L20 11.06V7c0-.55-.45-1-1-1h-5V3c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1v3H5c-.55 0-1 .45-1 1v4.06l-1.28.21c-.26.04-.48.22-.6.47-.11.24-.13.52-.06.78L3.95 19zM6 8h12v3.08l-6 1-6-1V8z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">02.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 02</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Portos e Logística</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Engenharia portuária, dragagem, licenciamento e infraestrutura retroportuária.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 03: Comércio e Serviços -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Comércio e Serviços" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXqm1cXLGOFSZzdN1XogOq8aUw3BnGvSQoBnGXFPH7-eSgYQXrrwtNa5S7MDQ-oFPjoNftrlzEUZT7j8-YFErgLnOhUHMixzcLcwZDZ0zQJ0BR6HkjFxE_cVsBYQ5FFaCIUgPaZbq1iVhCemUN6Z-6HjL-Aj2aR6BE4eZtJae_CYTwgHbZa5Enex39yav33qqu2-jwLDCGwXGhpOE6Z_uN_kaotNglETkIHzEYVD8c8MEO3CK2gVlvfA">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 4H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-7 2h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2zm-4-8h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm-4-8h2v2H4V6zm0 4h2v2H4v-2zm0 4h2v2H4v-2zm14 6H2v-2h18v2zm-2-8h2v2h-2v-2zm0-4h2v2h-2V6z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">03.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 03</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Comércio e Serviços</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Projetos civis, prevenção contra incêndio (AVCB) e regularização predial.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 04: Mercado Imobiliário -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Mercado Imobiliário" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC45ZEDDHng9IJ-TmloTuXo9ewDuZLnXeDa_AS0KaBX5Tq4wUAHngkPdW8fO9LPgrC3dO3jBhKLbN2vrcP7YiFsEKoRwSN9FacQbmlMYEYxp1tpqx_EwDWhluVm8yB8YWzsJH0Vjy5D4AjtNpqdnmyl4WIPGh-4N9t2vNbMlLotwAz8xS7oq5yxiY12weFdCmCUBErQzOML9tlV5s45OahLKjilU37jyTHh1O0lIQZSX2MSUt0kIg7goA">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">04.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 04</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Mercado Imobiliário</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Loteamentos, topografia de precisão, desmembramentos e consultoria técnica.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 05: Gestão Ambiental -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Gestão Ambiental" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXRgKWUTgCpjt11BgbKczSPKs0S7-j6si3A2ajDlaq_jDaFPTdyeV_bTywDIEBG8oDTDATywZtnzexdUqiyQqLEQtBF60hFhDwZX43HkFHl0WWymbkCWQjOCt3gq2YM25F3Hi4rxnDQLxu2zhsVGsFPwiIqKQjPkEt81K6VLCjSHSG4HQ-AU6q_YqUCtcOU4SIhkEE2JP12SCDAd1QzDHoOxSGJyXr-UIwsOa-Jraf2Leln1OEE8pAFw">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">05.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 05</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Gestão Ambiental</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Licenciamento ambiental, planos de controle (PCA/RCA) e conformidade legal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 06: Projetos Públicos -->
+      <div class="relative w-[320px] sm:w-[350px] md:w-[380px] lg:w-[384px] h-[465px] lg:h-[470px] flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col group interactive-card">
+        <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+          <img alt="Projetos Públicos" class="w-full h-full object-cover group-hover:scale-108 transition duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpAc0ZAMBA1iKxfiP8M3GEyrualY9VNdz3mpzVez_zz0begx4QVoeoTr_BtyCYqpY-fK3HrKBbMIxPDwIGvHlK_fj4M1K79hVhiKmVIM5kr0GLwBDRVD_pNxoJs_g4zYFdDeXmkXvmZoSLVsnE2Mus5jsl_hRjYxbuiMu_3tOK0JtdX9k7ZW1iH0epvOmAAQuOLl8fV1dNT8aaY4tLzSTLQ8lsVK_qps_mXFZfQY7KawyJ2k7QXVWyZg">
+        </div>
+        <div class="p-7 sm:p-8 pt-9 sm:pt-10 pb-6 relative flex-1 flex flex-col justify-between bg-white">
+          <div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue z-10">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 1L2 6v2h20V6L12 1zm-7 9v8h3v-8H5zm5 0v8h4v-8h-4zm6 0v8h3v-8h-3zM2 20v2h20v-2H2z"/></svg>
+          </div>
+          <span class="absolute top-4 right-8 text-brand-blue/20 font-black text-3xl select-none font-heading tracking-tighter">06.</span>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-brand-blue">Setor 06</span>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy tracking-tight">Projetos Públicos</h3>
+            <span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
+              Infraestrutura urbana, projetos de engenharia civil e fiscalização técnica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- END: SegmentosAtendidos -->
+<!-- BEGIN: DiferenciaisEstrategicos (Section 07) -->
+<section class="bg-slate-50 relative overflow-hidden py-14" id="diferenciais">
+<div class="max-w-[1360px] mx-auto px-6">
+<!-- Header -->
+<div class="max-w-2xl space-y-4 mb-14">
+<div class="flex items-center gap-3">
+<span class="w-8 h-[3px] bg-brand-blue rounded-full"></span>
+<span class="text-xs tracking-[0.2em] font-bold text-slate-500 uppercase">O Que Nos Move</span>
+</div>
+<h2 class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-brand-navy leading-tight">
+            Diferenciais Estratégicos
+          </h2>
+<p class="text-base sm:text-lg text-slate-600 font-normal">
+            Alinhamos nossa engenharia aos mais altos padrões globais de segurança, sustentabilidade e inovação técnica.
+          </p>
+</div>
+<!-- 3 Feature Cards with Top Image & Floating Icon -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Sustentabilidade e ESG (Clean photo: IMAGE_10) -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col interactive-card">
+<div class="h-56 relative overflow-hidden bg-slate-100">
+<img alt="Sustentabilidade e ESG OSP Engenharia" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc5f-yut5h87ju-ZIZObfMzL9Yp_nn3Fh2FzsMdtb20KekqqcySeLmvXwnjIPKXOkHpfNBxRF48KsAqRgAIwc36sBeQkg5V-xAzLUmMYeuDjcoiE7jvKRXQLbmJw7hOsA_kA3oAJD6CrKfxDzHgD7cnsYTh73en-JaNNVp2_tQcDNhgAI-SIKfVImIP0hBvL1QQEIDBRjOjXTvh_fBx2v3pgWzCkG5OrTEgmcbHQX8MgHsqy9EeT4yHw">
+</div>
+<div class="p-8 pt-10 relative flex-1 flex flex-col justify-between">
+<!-- Floating Icon -->
+<div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue">
+<svg class="w-6 h-6 text-brand-blue" viewBox="0 0 24 24" fill="none">
+<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" fill="currentColor"></path>
+<path d="M7 15c2.5-.5 5-2 6-3" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+<path d="M2 21c0-3 1.85-5.36 5.08-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
+</svg>
+</div>
+<div class="space-y-3">
+<h3 class="text-2xl font-bold text-brand-navy">Sustentabilidade e ESG</h3>
+<span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+<p class="text-sm sm:text-base text-slate-600 leading-relaxed pt-2">
+                  Práticas sustentáveis e responsabilidade social em todos os projetos.
+                </p>
+</div>
+</div>
+</div>
+<!-- Card 2: Segurança (Clean photo: IMAGE_13) -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col interactive-card">
+<div class="h-56 relative overflow-hidden bg-slate-100">
+<img alt="Segurança do Trabalho e Integridade OSP" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGmXGGhzQEis4bWY8rv3w8k5A6WmfjKqnFFpiIDJ6Glrpj_pAKWDBj99-4Jf5No5toIYvG-SRVI2Ut1ILbjKxZDLx9CXvA1UdBLt0vn3XsklP24nd-CCB1WzJ15yYsqni213WvV-TfsX27bvASFYFjb3PMPkZKZqyIMWv_073I8XDrzZr_8K6fclpH8Q1VTwZP1eRDXjiAXtCoqMLtuaaw9bU3fAamk9h6UuSZgFi7dpzJD-Zlka1UHg">
+</div>
+<div class="p-8 pt-10 relative flex-1 flex flex-col justify-between">
+<!-- Floating Icon -->
+<div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path>
+</svg>
+</div>
+<div class="space-y-3">
+<h3 class="text-2xl font-bold text-brand-navy">Segurança</h3>
+<span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+<p class="text-sm sm:text-base text-slate-600 leading-relaxed pt-2">
+                  Foco absoluto na integridade física e conformidade técnica rigorosa.
+                </p>
+</div>
+</div>
+</div>
+<!-- Card 3: Eficiência e Tecnologia (Clean photo: IMAGE_11) -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col interactive-card">
+<div class="h-56 relative overflow-hidden bg-slate-100">
+<img alt="Eficiência e Tecnologia de Engenharia" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6F2OV_ug0H2EdkFEH9JeG8RNq9k24Bc7dvIlnEZoN6cyDarrzDaBsTsxiQngJHwl2dtpdrrvxAq2SfFGIc9OFDrdMtRAsSozYmtjI15ukYRlm40pN1KK5zXP_Xlq6WMocbq30q_I97aCcFBCpla4nJyhssvjXsIjrazYxqbnoN25YdGAOtnHrBAgAnEF3fF6PRYochHnkCtkSChCvpCQIm2BXgazO65I5xYLwwMz-m0QEMDh9uQAheA">
+</div>
+<div class="p-8 pt-10 relative flex-1 flex flex-col justify-between">
+<!-- Floating Icon -->
+<div class="absolute -top-7 left-8 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-brand-blue">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path>
+</svg>
+</div>
+<div class="space-y-3">
+<h3 class="text-2xl font-bold text-brand-navy">Eficiência e Tecnologia</h3>
+<span class="w-10 h-[3px] bg-brand-blue rounded-full block"></span>
+<p class="text-sm sm:text-base text-slate-600 leading-relaxed pt-2">
+                  Tecnologia de precisão e planejamento digital para otimizar resultados.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: DiferenciaisEstrategicos -->
+</main>
+<!-- BEGIN: Top Statistics Banner (Light Section) -->
+<section class="bg-white text-brand-navy py-14 lg:py-16 border-b border-slate-200" id="estatisticas">
+<div class="max-w-[1360px] mx-auto px-6">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 lg:divide-x divide-slate-200">
+<!-- Stat 1 -->
+<div class="stat-item group cursor-pointer flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
+<svg class="stat-icon w-10 h-10 text-brand-blue mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="stat-number text-4xl sm:text-5xl font-black text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors duration-300" data-target="150" data-prefix="+">+0</span>
+<span class="text-sm font-semibold text-slate-500 mt-1">Clientes</span>
+</div>
+<!-- Stat 2 -->
+<div class="stat-item group cursor-pointer flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
+<svg class="stat-icon w-10 h-10 text-brand-blue mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="stat-number text-4xl sm:text-5xl font-black text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors duration-300" data-target="160" data-prefix="+">+0</span>
+<span class="text-sm font-semibold text-slate-500 mt-1">Projetos Homologados</span>
+</div>
+<!-- Stat 3 -->
+<div class="stat-item group cursor-pointer flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
+<svg class="stat-icon w-10 h-10 text-brand-blue mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="stat-number text-4xl sm:text-5xl font-black text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors duration-300" data-target="1000" data-prefix="+">+0</span>
+<span class="text-sm font-semibold text-slate-500 mt-1">Ativos Inspecionados</span>
+</div>
+<!-- Stat 4 -->
+<div class="stat-item group cursor-pointer flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
+<svg class="stat-icon w-10 h-10 text-brand-blue mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="stat-number text-4xl sm:text-5xl font-black text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors duration-300" data-target="50" data-prefix="+">+0</span>
+<span class="text-sm font-semibold text-slate-500 mt-1">Planos de Rigging</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Top Statistics Banner -->
+
+<!-- Símbolos SVG do Rodapé OSP -->
+<svg class="svg-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-tiktok" viewBox="0 0 24 24"><path d="M14 3v11.8a4.2 4.2 0 1 1-4-4.2M14 4c.5 2.7 2.3 4.3 5 4.5"/></symbol>
+  <symbol id="icon-youtube" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor" stroke="none"/><path d="m10 9 5 3-5 3z" fill="#05305e" stroke="none"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M4 9v11M4 4v.2M9 20V9m0 5a5 5 0 0 1 10 0v6"/></symbol>
+  <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M14 21V9.2c0-2.3 1.1-3.2 3-3.2h2M10 12h8"/></symbol>
+  <symbol id="icon-building" viewBox="0 0 24 24"><path d="M4 21V7h9v14M13 10h7v11M7 10h2m-2 4h2m-2 4h2m7-5h1m-1 4h1M2 21h20"/></symbol>
+  <symbol id="icon-settings" viewBox="0 0 24 24"><path d="m9.5 3 .5 2a7 7 0 0 1 4 0l.5-2 3 1.7-.8 1.9a7 7 0 0 1 2 3.4l2 .3v3.4l-2 .3a7 7 0 0 1-2 3.4l.8 1.9-3 1.7-.5-2a7 7 0 0 1-4 0l-.5 2-3-1.7.8-1.9a7 7 0 0 1-2-3.4l-2-.3v-3.4l2-.3a7 7 0 0 1 2-3.4l-.8-1.9z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M2 7V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/><path d="M2 9h20"/></symbol>
+  <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M4 4h16v13H9l-5 4z"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 22s8-8.4 8-14a8 8 0 1 0-16 0c0 5.6 8 14 8 14z"/><circle cx="12" cy="8" r="2.5"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.4 2.5 10 6.2 8 9.1a16 16 0 0 0 6.9 6.9l2.9-2 3.7 3.6-1.9 3.1c-.6 1-1.8 1.4-2.9 1C8.9 19 5 15.1 2.3 7.3c-.4-1.1 0-2.3 1-2.9z"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+  <symbol id="icon-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2 13h20m-12 0v2h4v-2"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M3 12h17m-7-7 7 7-7 7"/></symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11 20l-2 6 6.4-1.9A13 13 0 1 0 16 3z"/><path d="M10.6 9.6c-.6 0-1.1.4-1.6 1.1-1 1.5-.8 3.3.2 5.1 1.8 3.3 4.5 5.8 7.8 7.2 1.5.6 3.1.4 4.2-.6.7-.6 1.1-1.3 1.1-1.9l-3.9-1.8-1.5 1.6a10 10 0 0 1-5.6-5.7l1.5-1.5-1.8-3.8z"/></symbol>
+</svg>
+
+<footer id="osp-footer" class="site-footer" aria-label="OSP Engenharia e Consultoria">
+  <div class="footer-scene" aria-hidden="true">
+    <div class="footer-scene__building"></div>
+    <div class="footer-scene__arc footer-scene__arc--outer"></div>
+    <div class="footer-scene__arc footer-scene__arc--inner"></div>
+    <div class="footer-scene__arc footer-scene__arc--right"></div>
+    <div class="footer-scene__beam"></div>
+    <div class="footer-scene__lower-glow"></div>
+    <div class="footer-scene__bottom"></div>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand" id="brand">
+        <img class="brand-logo" src="assets/osp-logo.png" alt="OSP Engenharia e Consultoria" width="260" height="311">
+        <p class="brand-description">Soluções completas com rigor técnico<br class="desktop-break"> e conformidade normativa em<br class="desktop-break"> Barcarena e região.</p>
+      </div>
+      <nav class="footer-group footer-social" id="social" aria-label="Redes sociais">
+        <h2>Redes Sociais</h2>
+        <ul class="footer-link-list">
+          <li><a class="footer-nav-row" href="https://www.instagram.com/ospengenharia/" target="_blank" rel="noopener noreferrer"><span class="footer-icon"><svg><use href="#icon-instagram"/></svg></span><span>Instagram</span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a></li>
+          <li><a class="footer-nav-row" href="https://www.tiktok.com/@ospengenharia" target="_blank" rel="noopener noreferrer"><span class="footer-icon"><svg><use href="#icon-tiktok"/></svg></span><span>TikTok</span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a></li>
+          <li><a class="footer-nav-row" href="https://www.youtube.com/channel/UCW6Pz898V33sXfkSaxk9uUA" target="_blank" rel="noopener noreferrer"><span class="footer-icon"><svg><use href="#icon-youtube"/></svg></span><span>YouTube</span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a></li>
+          <li><a class="footer-nav-row" href="https://br.linkedin.com/company/ospengenharia" target="_blank" rel="noopener noreferrer"><span class="footer-icon"><svg><use href="#icon-linkedin"/></svg></span><span>LinkedIn</span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a></li>
+          <li><a class="footer-nav-row" href="https://www.facebook.com/profile.php?id=100089214560736" target="_blank" rel="noopener noreferrer"><span class="footer-icon"><svg><use href="#icon-facebook"/></svg></span><span>Facebook</span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a></li>
+        </ul>
+      </nav>
+      <nav class="footer-group footer-company" id="company" aria-label="A Empresa">
+        <h2>A Empresa</h2>
+        <ul class="footer-link-list">
+          <li><a class="footer-nav-row" href="sobre.html"><span class="footer-icon"><svg><use href="#icon-building"/></svg></span><span>Sobre Nós</span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a></li>
+          <li><a class="footer-nav-row" href="servicos.html"><span class="footer-icon"><svg><use href="#icon-settings"/></svg></span><span>Serviços</span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a></li>
+          <li><a class="footer-nav-row" href="projetos.html"><span class="footer-icon"><svg><use href="#icon-folder"/></svg></span><span>Projetos</span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a></li>
+          <li><a class="footer-nav-row" href="contato.html"><span class="footer-icon"><svg><use href="#icon-chat"/></svg></span><span>Contato</span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a></li>
+        </ul>
+      </nav>
+      <section class="footer-group footer-contacts" id="contacts" aria-labelledby="contacts-title">
+        <h2 id="contacts-title">Contatos</h2>
+        <address class="contact-list">
+          <div class="contact-card contact-card--address"><span class="footer-icon"><svg><use href="#icon-pin"/></svg></span><div><span class="contact-label">Endereço</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Tv.+Bento+Manoel+de+Oliveira+15A+Murucupi+Barcarena+PA" target="_blank" rel="noopener noreferrer">Tv. Bento Manoel de Oliveira, 15A, Qd. 264<br>Murucupi — Barcarena, PA</a></div></div>
+          <div class="contact-card"><span class="footer-icon"><svg><use href="#icon-phone"/></svg></span><div><span class="contact-label">Telefone</span><a href="tel:+5591993623933">91 9 9362-3933</a></div></div>
+          <div class="contact-card"><span class="footer-icon"><svg><use href="#icon-mail"/></svg></span><div><span class="contact-label">E-mail</span><a href="mailto:ospengenharia@outlook.com.br">ospengenharia@<wbr>outlook.com.br</a></div></div>
+        </address>
+      </section>
+    </div>
+    <section class="footer-cta" id="cta" aria-labelledby="cta-title">
+      <img class="cta-blueprint" src="assets/footer/blueprint-v1.svg" alt="" aria-hidden="true">
+      <span class="footer-icon cta-icon"><svg><use href="#icon-briefcase"/></svg></span>
+      <div class="cta-copy"><p>VAMOS CONSTRUIR JUNTOS</p><h2 id="cta-title">Tem um <span>projeto em mente?</span></h2></div>
+      <a class="cta-button" href="https://wa.me/5591993623933?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20da%20OSP%20Engenharia" target="_blank" rel="noopener noreferrer" aria-label="Fale com nossa equipe pelo WhatsApp"><div class="cta-button-content"><img src="WHATSAPP.webp" alt="WhatsApp" class="cta-whatsapp-icon"><span>Fale com nossa equipe</span></div><svg><use href="#icon-arrow"/></svg></a>
+    </section>
+    <div class="footer-bottom" id="legal">
+      <p>© 2024 OSP Engenharia e Consultoria <span class="separator">|</span> CNPJ: 44.845.292/0001-39 <span class="separator">|</span> Todos os direitos reservados.</p>
+      <nav class="legal-links" aria-label="Informações legais"><a href="#" data-link-pending="privacidade" aria-disabled="true">Política de Privacidade</a><span class="separator">|</span><a href="#" data-link-pending="termos" aria-disabled="true">Termos de Uso</a></nav>
+    </div>
+  </div>
+</footer>
+<!-- END: StatisticsAndFooter -->
+<!-- Floating WhatsApp Quick Action Button -->
+<aside aria-label="Acesso rápido WhatsApp" class="floating-whatsapp-widget is-hidden fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+  <a aria-label="Falar pelo WhatsApp com OSP Engenharia" class="block w-14 h-14 sm:w-16 sm:h-16 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none drop-shadow-[0_8px_20px_rgba(37,211,102,0.45)] hover:drop-shadow-[0_12px_28px_rgba(37,211,102,0.7)] pulse-subtle" href="https://wa.me/5591993623933" rel="noopener noreferrer" target="_blank">
+    <img src="WHATSAPP.webp" alt="WhatsApp OSP Engenharia" class="w-full h-full object-contain pointer-events-none select-none">
+  </a>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Animation & Interaction Stack -->
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/js/scroll.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/interactions.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="footer.js" defer></script>
+</body></html>

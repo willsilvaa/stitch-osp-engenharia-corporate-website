@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 292" role="img" aria-labelledby="title">
+  <title id="title">OSP Engenharia e Consultoria</title>
+  <defs>
+    <linearGradient id="silver" x1="0" x2=".85" y1="0" y2="1"><stop stop-color="#fff"/><stop offset=".35" stop-color="#d0e3f9"/><stop offset=".63" stop-color="#f9fdff"/><stop offset="1" stop-color="#8eafd4"/></linearGradient>
+    <linearGradient id="text" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fff"/><stop offset=".48" stop-color="#bfd9f4"/><stop offset=".72" stop-color="#f5fbff"/><stop offset="1" stop-color="#7399c7"/></linearGradient>
+    <radialGradient id="orb" cx=".32" cy=".23" r=".85"><stop stop-color="#fff"/><stop offset=".44" stop-color="#dcecff"/><stop offset=".8" stop-color="#9dbfe0"/><stop offset="1" stop-color="#fff"/></radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+  <g fill="none" stroke="#168ffe" opacity=".55" filter="url(#glow)" stroke-width="14"><path d="M115 15a101 101 0 1 1-100 102"/><path d="M115 37a79 79 0 1 1-76 111"/><path d="M115 60a56 56 0 1 1-50 85"/></g>
+  <g fill="none" stroke="url(#silver)" stroke-linecap="round" stroke-width="13"><path d="M115 15a101 101 0 1 1-100 102"/><path d="M115 37a79 79 0 1 1-76 111"/><path d="M115 60a56 56 0 1 1-50 85"/></g>
+  <circle cx="110" cy="105" r="33" fill="url(#orb)" stroke="#e8f5ff" stroke-width="4"/>
+  <text x="8" y="248" fill="url(#text)" stroke="#e7f5ff" stroke-width=".7" font-family="Arial, sans-serif" font-size="92" font-weight="700" textLength="236" lengthAdjust="spacingAndGlyphs">osp</text>
+  <path d="M10 256h242" stroke="url(#silver)" stroke-width="8" stroke-linecap="round"/>
+  <text x="8" y="282" fill="#f4f8ff" font-family="Arial, sans-serif" font-size="12.6" font-weight="800" letter-spacing=".2">ENGENHARIA E CONSULTORIA</text>
+</svg>
