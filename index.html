@@ -242,11 +242,54 @@
   </svg>
 </button>
 </div>
+<script>
+  function toggleOSPMenu(forceState) {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('mobile-menu-btn');
+    var iconOpen = document.getElementById('hamburger-icon-open');
+    var iconClose = document.getElementById('hamburger-icon-close');
+    var header = document.getElementById('main-header');
+    if (!menu || !btn) return;
+    var shouldOpen = forceState !== undefined ? forceState : menu.classList.contains('hidden');
+    if (shouldOpen) {
+      menu.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      if (iconOpen) iconOpen.classList.add('hidden');
+      if (iconClose) iconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      if (header) {
+        header.style.transform = 'translate3d(0, 0, 0)';
+        header.classList.add('header-scrolled');
+        header.classList.remove('header-at-top');
+      }
+      if (window.ospLenis) window.ospLenis.stop();
+    } else {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      if (iconOpen) iconOpen.classList.remove('hidden');
+      if (iconClose) iconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      if (header) {
+        var y = window.scrollY || window.pageYOffset;
+        if (y <= 20) {
+          header.classList.add('header-at-top');
+          header.classList.remove('header-scrolled');
+        }
+      }
+      if (window.ospLenis) window.ospLenis.start();
+    }
+    btn.blur();
+  }
+</script>
+</header>
+<!-- END: MainHeader -->
 
-<!-- Mobile Menu Drawer / Dropdown com Backdrop de Vidro Fosco em Tela Cheia -->
-<div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-14 bottom-0 z-50 flex flex-col justify-start bg-slate-950/65 backdrop-blur-md transition-all duration-300 overflow-y-auto" style="-webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);">
+<!-- Mobile Menu Drawer / Dropdown com Backdrop em Tela Cheia -->
+<div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-14 bottom-0 z-40 flex flex-col justify-start bg-[#060d1a]/95 backdrop-blur-xl transition-all duration-300 overflow-y-auto" style="-webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);">
   <!-- Conteúdo Principal do Menu -->
-  <div class="bg-[#0c121e]/98 border-t border-b border-white/10 px-6 py-5 shadow-2xl flex-shrink-0">
+  <div class="bg-[#0c121e] border-t border-b border-white/10 px-6 py-5 shadow-2xl flex-shrink-0">
     <div class="flex flex-col gap-5">
       <!-- Links de Navegação Mobile -->
       <nav class="flex flex-col space-y-1.5" aria-label="Navegação Mobile">
@@ -302,43 +345,9 @@
     </div>
   </div>
 
-  <!-- Área de Vidro Fosco abaixo do menu (cobre o site de fundo com efeito blur) -->
-  <div class="flex-1 w-full min-h-[100px] pointer-events-auto" aria-hidden="true"></div>
+  <!-- Área de fechamento ao tocar fora -->
+  <div class="flex-1 w-full min-h-[60px]" onclick="toggleOSPMenu(false)" aria-hidden="true"></div>
 </div>
-<script>
-  function toggleOSPMenu(forceState) {
-    var menu = document.getElementById('mobile-menu');
-    var btn = document.getElementById('mobile-menu-btn');
-    var iconOpen = document.getElementById('hamburger-icon-open');
-    var iconClose = document.getElementById('hamburger-icon-close');
-    var header = document.getElementById('main-header');
-    if (!menu || !btn) return;
-    var shouldOpen = forceState !== undefined ? forceState : menu.classList.contains('hidden');
-    if (shouldOpen) {
-      menu.classList.remove('hidden');
-      btn.setAttribute('aria-expanded', 'true');
-      if (iconOpen) iconOpen.classList.add('hidden');
-      if (iconClose) iconClose.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
-      if (header) header.style.transform = 'translate3d(0, 0, 0)';
-      if (window.ospLenis) window.ospLenis.stop();
-    } else {
-      menu.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-      if (iconOpen) iconOpen.classList.remove('hidden');
-      if (iconClose) iconClose.classList.add('hidden');
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-      if (window.ospLenis) window.ospLenis.start();
-    }
-    btn.blur();
-  }
-  // Fechamento exclusivamente pelo botão X (ou navegação de link).
-  // Não fecha ao deslizar, arrastar ou tocar fora.
-</script>
-</header>
-<!-- END: MainHeader -->
 <script>
   /* Scroll listener: alterna entre header fundido ao hero (topo) e header sólido (scroll) */
   (function() {
