@@ -7,6 +7,21 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Outfit:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
 <link rel="preload" href="assets/fonts/osp-display-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/hero-mobile-poster.webp" media="(max-width: 767px)">
+<link rel="preload" as="image" href="assets/hero-desktop-poster.webp" media="(min-width: 768px)">
+
+<style>
+  /* Prevenção imediata de tela branca no carregamento (FOUC / Canvas Blank) */
+  html {
+    background-color: #060d1a !important;
+  }
+  body {
+    background-color: #060d1a !important;
+  }
+  #inicio {
+    background-color: #060d1a !important;
+  }
+</style>
 
 <link rel="stylesheet" href="assets/css/motion.css">
 <!-- Tailwind CSS v3 with Plugins -->
@@ -80,7 +95,7 @@
   </style>
 <link rel="stylesheet" href="footer.css?v=20260926">
 </head>
-<body class="bg-white text-brand-navy antialiased">
+<body class="bg-[#060d1a] text-brand-navy antialiased">
 <!-- BEGIN: MainHeader -->
 <style id="header-fusion-styles">
   /* Fusão limpa header ↔ hero sem linhas divisórias */
@@ -389,15 +404,15 @@
     }
   }
 </style>
-<section class="relative overflow-hidden h-[100svh] min-h-[580px] md:min-h-0 md:w-full flex flex-col justify-between pt-[72px] sm:pt-[80px] md:pt-[88px] lg:pt-[96px] pb-5 sm:pb-6 md:pb-7 lg:pb-8 bg-transparent" id="inicio">
-  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+<section class="relative overflow-hidden h-[100svh] min-h-[580px] md:min-h-0 md:w-full flex flex-col justify-between pt-[72px] sm:pt-[80px] md:pt-[88px] lg:pt-[96px] pb-5 sm:pb-6 md:pb-7 lg:pb-8 bg-[#060d1a]" id="inicio">
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-[#060d1a]">
     <!-- Desktop Hero Video (Apenas telas a partir de md) -->
-    <video id="hero-video" autoplay="" muted="" playsinline="" class="hidden md:block w-full h-full object-cover object-center">
+    <video id="hero-video" poster="assets/hero-desktop-poster.webp" preload="auto" autoplay="" muted="" playsinline="" class="hidden md:block w-full h-full object-cover object-center bg-[#060d1a]">
       <source src="Hero_video_desktop.webm" type="video/webm">
     </video>
 
     <!-- Mobile Hero Video (Exclusivo Mobile < md - Reproduz totalmente 1x e pausa no último frame) -->
-    <video id="hero-video-mobile" autoplay="" muted="" playsinline="" class="block md:hidden w-full h-full object-cover object-center">
+    <video id="hero-video-mobile" poster="assets/hero-mobile-poster.webp" preload="auto" autoplay="" muted="" playsinline="" class="block md:hidden w-full h-full object-cover object-center bg-[#060d1a]">
       <source src="Hero_video_mobile.webm" type="video/webm">
     </video>
   </div>

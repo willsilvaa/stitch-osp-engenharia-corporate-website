@@ -8,6 +8,20 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Outfit:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
 <link rel="preload" href="assets/fonts/osp-display-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/hero-servicos-poster.webp">
+
+<style>
+  /* Prevenção imediata de tela branca no carregamento (FOUC / Canvas Blank) */
+  html {
+    background-color: #060d1a !important;
+  }
+  body {
+    background-color: #060d1a !important;
+  }
+  #hero-servicos {
+    background-color: #060d1a !important;
+  }
+</style>
 
 <link rel="stylesheet" href="assets/css/motion.css">
 <!-- Tailwind CSS v3 with Plugins -->
@@ -58,7 +72,7 @@
 </style>
 <link rel="stylesheet" href="footer.css?v=20260926">
 </head>
-<body class="bg-slate-50/50 text-brand-navy antialiased">
+<body class="bg-[#060d1a] text-brand-navy antialiased">
 <!-- BEGIN: MainHeader -->
 <style id="header-fusion-styles">
   /* Fusão limpa header ↔ hero sem linhas divisórias */
@@ -370,9 +384,9 @@
     }
   }
 </style>
-<section class="relative overflow-hidden h-[100svh] min-h-[580px] md:min-h-0 md:w-full flex flex-col justify-between pt-[70px] sm:pt-[76px] md:pt-[84px] lg:pt-[92px] pb-4 sm:pb-6 md:pb-6 lg:pb-6 bg-transparent" id="hero-servicos">
-  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-    <video id="hero-video-servicos" autoplay="" muted="" playsinline="" class="w-full h-full object-cover object-center">
+<section class="relative overflow-hidden h-[100svh] min-h-[580px] md:min-h-0 md:w-full flex flex-col justify-between pt-[70px] sm:pt-[76px] md:pt-[84px] lg:pt-[92px] pb-4 sm:pb-6 md:pb-6 lg:pb-6 bg-[#060d1a]" id="hero-servicos">
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-[#060d1a]">
+    <video id="hero-video-servicos" poster="assets/hero-servicos-poster.webp" preload="auto" autoplay="" muted="" playsinline="" class="w-full h-full object-cover object-center bg-[#060d1a]">
       <source src="Hero_serviços.webm" type="video/webm">
     </video>
     <!-- Gradiente para legibilidade e imersão sem divisórias duras -->
